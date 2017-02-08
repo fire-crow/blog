@@ -1,0 +1,190 @@
+<div data-ng-include="'/static/blog/layout/head.html'" data-ng-controller="HeaderController">
+</div>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-2 col-md-offset-1 biger-pos"
+                 data-ng-controller="ImgUpdateController">
+                <a  class="fui-new" ></a>
+                <input class="fui-new biger-center" name="file" style="display: none"
+                        type="file" file-model="myFile" id="file" ng-model="myFile"/>
+                <img id="uploadLabel" class="img-circle biger-ent" width="100%" height="100%"
+                     data-ng-src="{[{user.headshot}]}" data-ng-click=""/>
+                <div  class="text-center">
+                    <div class="row">
+                        <span >{[{user.sweet_name}]}</span>&nbsp;
+                        <label class="fui-question-circle" ng-if="user.sex==0"></label>
+                        <img  class="biger-lit-bot" src="/static/plugins/img/sex/woman.png"
+                              width="8%" height="8%" ng-if="user.sex==2"/>
+                        <img  class="biger-lit-bot"src="/static/plugins/img/sex/man.png"
+                              width="8%" height="8%" ng-if="user.sex==1"/>
+                    </div>
+                    <div class="row">
+                        <span >{[{ 'set.fans_num' | Trans}]}{[{user.fans_num}]}</span>&nbsp;
+                        <span >{[{ 'set.focus_num' | Trans}]}{[{user.focus_num}]}</span>&nbsp;
+                    </div>
+                    <div class="row">
+                        <span >{[{ 'set.level' | Trans}]}{[{user.level}]}</span>&nbsp;
+                    </div>
+                    <div class="row">
+                        <span >{[{ 'set.publuc_num' | Trans}]}{[{user.publuc_num}]} {[{ 'set.pian' | Trans}]}</span>&nbsp;
+                    </div>
+                    <div class="row">
+                        <span >{[{ 'set.last_login' | Trans}]}{[{user.last_login}]}</span>&nbsp;
+                    </div>
+                    <span class="row">{[{user.signature}]}</span>
+                </div>
+
+            </div>
+
+            <form class="form-search col-md-7 col-md-offset-4">
+                <div class="jumbotron row">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label >{[{ 'set.sweet_name' | Trans}]}</label>
+                            <input placeholder="{[{user.sweet_name ? user.sweet_name : 'set.unkown' | Trans}]}"
+                                    class="form-control" type="text" data-ng-model="user.sweet_name" readonly/>
+                        </div>
+                        <div class="col-md-6 ">
+                            <label>{[{ 'set.mobile' | Trans}]}</label>
+                            <a class="col-md-offset-7">{[{ 'set.bound_phone' | Trans}]}</a>
+                            <input placeholder="{[{user.mobile_phone ? user.mobile_phone : 'set.unkown' | Trans}]}"
+                                    class="form-control" type="text" data-ng-model="user.mobile_phone" readonly/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>{[{ 'email' | Trans}]}</label>
+                            <a class="col-md-offset-7">{[{ 'set.change_email' | Trans}]}</a>
+                            <input class="form-control" type="text" data-ng-model="user.email" readonly/>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{[{ 'password' | Trans}]}</label>
+                            <a class="col-md-offset-7">{[{ 'set.change_password' | Trans}]}</a>
+                            <input placeholder="{[{user.password ? user.password : 'set.unkown' | Trans}]}"
+                                    class="form-control" type="password" data-ng-model="user.password" readonly/>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 占地。。 -->
+                <div class="biger-set-top"></div>
+
+                <div class="jumbotron row">
+                    <div class="row" style="padding-left: 14px;">
+                        <strong>{[{ 'set.notice' | Trans}]}<strong>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>{[{ 'set.real_name' | Trans}]}</label>
+                            <input placeholder="{[{user.first_name ? user.first_name : 'set.unkown' | Trans}]}"
+                                    class="form-control" type="text" data-ng-model="user.first_name"/>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{[{ 'set.sex' | Trans}]}</label>
+                            <div class="row biger-form-control">
+                                <label class="radio">
+                                    <input type="radio" value="0"
+                                           class="custom-radio" data-ng-model="user.sex"/>
+                                    <span class="icons">
+                                        <span class="icon-unchecked"></span>
+                                        <span class="icon-checked"></span>
+                                    </span>
+                                    <span>{[{ 'set.unkown' | Trans}]}</span>
+                                </label>&nbsp;&nbsp;&nbsp;
+                                <label class="radio">
+                                    <input type="radio" value="1"
+                                           class="custom-radio" data-ng-model="user.sex"/>
+                                    <span class="icons">
+                                        <span class="icon-unchecked"></span>
+                                        <span class="icon-checked"></span>
+                                    </span>
+                                    <span>{[{ 'set.man' | Trans}]}</span>
+                                </label>&nbsp;&nbsp;&nbsp;
+                                <label class="radio">
+                                    <input type="radio" value="2"
+                                           class="custom-radio" data-ng-model="user.sex"/>
+                                    <span class="icons">
+                                        <span class="icon-unchecked"></span>
+                                        <span class="icon-checked"></span>
+                                    </span>
+                                    <span>{[{ 'set.woman' | Trans}]}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>{[{ 'set.qq' | Trans}]}</label>
+                            <input placeholder="{[{user.qq ? user.qq : 'set.unkown' | Trans}]}"
+                                    class="form-control" type="text" data-ng-model="user.qq"/>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{[{ 'set.wechat' | Trans}]}</label>
+                            <input placeholder="{[{user.wechat ? user.wechat : 'set.unkown' | Trans}]}"
+                                    class="form-control" type="text" data-ng-model="user.wechat"/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class=" date form_datetime" data-date="1979-09-16T05:25:07Z"
+                                  biger-date-picker data-link-field="dtp">
+                                <label>{[{ 'set.birthday' | Trans}]}</label>
+                                <input id="datetimepicker" class="form-control" type="text"
+                                       value="{[{user.birthday}]}"
+                                       data-ng-model="user.birthday"
+                                       data-date-format="yyyy-MM-dd" readonly/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{[{ 'set.local' | Trans}]}</label>
+                            <input placeholder="{[{user.local ? user.local : 'set.unkown' | Trans}]}"
+                                    class="form-control" type="text" data-ng-model="user.local"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>{[{ 'set.company' | Trans}]}</label>
+                            <input placeholder="{[{user.company ? user.company : 'set.unkown' | Trans}]}"
+                                    class="form-control" type="text" data-ng-model="user.company"/>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{[{ 'set.job_type' | Trans}]}</label>
+                            <input placeholder="{[{user.job_type ? user.job_type : 'set.unkown' | Trans}]}"
+                                    class="form-control" type="text" data-ng-model="user.job_type"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>{[{ 'set.signature' | Trans}]}</label>
+                            <input placeholder="{[{user.signature ? user.signature : 'set.unkown' | Trans}]}"
+                                    class="form-control" type="text" data-ng-model="user.signature"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>{[{ 'set.label' | Trans}]}</label>
+                                <div class="tagsinput-primary">
+                                    <input name="tagsinput" class="tagsinput" data-role="tagsinput"/>
+                                </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2">
+                        <a href="javascript:void(0)" data-ng-click="set_finished()"
+                            class="btn btn-block btn-lg btn-inverse">{[{"btn.submit" | Trans}]}</a>
+                    </div>
+
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+
+</div>

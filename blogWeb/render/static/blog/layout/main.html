@@ -1,0 +1,234 @@
+<div id="Overview" name="Overview" xmlns="http://www.w3.org/1999/html"
+     class="row-fluid  img-my-background" >
+    <div data-ng-include="'/static/blog/layout/head.html'" data-ng-controller="HeaderController">
+    </div>
+</div>
+
+<div id="Blogs" name="Blogs" class="div-height-half" my-scroll enter-scroll="addPage2Class()">
+    <div class="container-fluid">
+        <div class="row">
+            <div>
+                <h3 class="text-center">
+                   {[{ "main.ourBlogs" |  Trans  }]}
+                </h3>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="row">
+                        <div id = "img1" name="img1"  data-ng-click="goblogs('haha')"
+                             class="col-xs-6 col-md-4 ">
+                            <a class="thumbnail">
+                                <img class="" href="#" alt="140x140"
+                                     src="/static/plugins/img/1.jpg"/>
+                            </a>
+                        </div>
+                        <div id = "img2" name="img2" class="col-xs-6 col-md-4 ">
+                            <a class="thumbnail">
+                                <img class="" href="#" alt="140x140"
+                                     src="/static/plugins/img/1.jpg"/>
+                            </a>
+                        </div>
+                        <div id = "img3" name="img3" class="col-xs-6 col-md-4 ">
+                            <a class="thumbnail">
+                                <img class="" href="#" alt="140x140"
+                                     src="/static/plugins/img/1.jpg"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div id = "img4" name="img4" class="col-xs-6 col-md-4 ">
+                            <a class="thumbnail">
+                                <img class="" href="#" alt="140x140"
+                                     src="/static/plugins/img/1.jpg"/>
+                            </a>
+                        </div>
+                        <div id = "img5" name="img5" class="col-xs-6 col-md-4 ">
+                            <a class="thumbnail">
+                                <img class="" href="#" alt="140x140"
+                                     src="/static/plugins/img/1.jpg"/>
+                            </a>
+                        </div>
+                        <div id = "img6" name="img6" class="col-xs-6 col-md-4">
+                            <a class="thumbnail">
+                                <img class="" href="#" alt="140x140"
+                                     src="/static/plugins/img/1.jpg"/>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="Aboutus" name="Aboutus" class="row div-height-full" my-scroll enter-scroll="addPage3Class()" >
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h3 class="text-center">
+                    {[{ "main.aboutus" |  Trans  }]}
+                </h3>
+                <div class="col-xs-8 col-md-offset-2">
+                    <div class="thumbnails">
+                        <div class="col-md-4 evenflow_scale">
+                            <div class="thumbnail">
+                                <img alt="" src="/static/plugins/img/1.jpg" class="img-thumbnail"/>
+                                <div class="caption">
+                                    <h3 class="text-center">
+                                        {[{ "main.biggerW" | Trans  }]}
+                                    </h3>
+                                    <p class="text-center">
+                                        {[{ "main.xu" | Trans  }]}
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 evenflow_scale">
+                            <div class="thumbnail">
+                                <img alt="" src="/static/plugins/img/1.jpg" class="img-thumbnail"/>
+                                <div class="caption">
+                                    <h3 class="text-center">
+                                        {[{ "main.biggerW" | Trans  }]}
+                                    </h3>
+                                    <p class="text-center">
+                                       {[{ "main.biggerWord" | Trans  }]}
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 evenflow_scale">
+                            <div class="thumbnail">
+                                <img alt="" src="/static/plugins/img/1.jpg" class="img-thumbnail"/>
+                                <div class="caption">
+                                    <h3 class="text-center">
+                                        {[{ "main.biggerW" | Trans  }]}
+                                    </h3>
+                                    <p class="text-center">
+                                        {[{ "main.long" | Trans  }]}
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <h3 class="text-center">
+                    {[{"main.ourheart" | Trans}]}
+                </h3>
+                <p class="col-md-4 col-md-offset-4 text-center">
+                    <strong>{[{"main.ourWords" | Trans}]}<strong>
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="Connect" name="Connect" my-scroll enter-scroll="addPage4Class()"
+     class="div-height-smhalf pg4-before" ng-if="!logined_flag && !can_message">
+    <div class="clo-md-12">
+        <div class="col-md-4 col-md-offset-4">
+            <h3 class="text-center div-height-small">
+                {[{ "main.connectwith" |  Trans  }]}
+            </h3>
+            <div class="text-center div-height-small">
+                <small>{[{"main.addwords" | Trans}]}</small>
+            </div>
+
+            <form id="register" name="register" class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-4 control-labelcol-md-4 control-label" for="inputEmail">
+                        {[{'username' | Trans}]}
+                        <span class="required" aria-required="true"> * </span>
+                    </label>
+                    <div class="controls">
+                        <input id="username" name="username" type="text" class=""
+                               data-ng-model="user.sweet_name" placeholder="目前没做校验,已经支持汉语了"/>
+                    </div>
+                </div>
+                <!-- forbiden brower block data -->
+                <input type="text" style="display: none">
+                <input type="password" style="display: none">
+                <div class="form-group">
+                    <label class="col-md-4 control-labelcol-md-4 control-label" for="inputPassword">
+                        {[{'password' | Trans}]}
+                        <span class="required" aria-required="true"> * </span>
+                    </label>
+                    <div class="controls">
+                        <input id="password" name="password" type="password" class=""
+                               data-ng-model="user.password"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row text-center">
+                        <button type="submit" class="btn btn-primary" data-ng-click="userLogin(user)">
+                            {[{ 'login' | Trans}]}
+                        </button>
+                        <button type="submit" class="btn btn-info" data-ng-click="newUserRegister(user)">
+                            {[{'register' | Trans}]}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="Connect" name="Connect" class="div-height-smhalf" my-scroll
+     enter-scroll="addPage4Class()"  ng-if="logined_flag && !can_message">
+    <div class="clo-md-12" ng-if="can_dispaly">
+        <div class="col-md-4 col-md-offset-4">
+            <span id="welcome" class="welcome-size show-slow">{[{welcome_word}]} </span>
+        </div>
+    </div>
+</div>
+
+<div id="Connect" name="Connect" ng-if="can_message"
+     class="div-height-smhalf">
+    <div class="clo-md-12">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="text-center div-height-small">
+                <small>来说点什么吧</small>
+            </div>
+            <form id="message" name="message" class="form-horizontal">
+                <div class="form-group">
+                    <div class="">
+                        <input id="msgtitle" name="msgtitle" type="text" class="form-control"
+                               data-ng-model="message.msgtitles" placeholder="标题"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="">
+                        <textarea id="msgdata"  name="msgdata" class="form-control" rows="3"
+                            data-ng-model="message.msgdatas" placeholder="留言"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-info" data-ng-click="submitMessage(message)">
+                            提交
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

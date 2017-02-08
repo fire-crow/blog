@@ -1,0 +1,11 @@
+<div>
+    {{ success }}
+</div>
+<input id="name" style="display:none" value="{{ UOS }}"/>
+
+
+
+<script type="text/javascript">
+    var UOS = document.getElementById("name").value
+    window.localStorage.UOS = UOS
+</script>

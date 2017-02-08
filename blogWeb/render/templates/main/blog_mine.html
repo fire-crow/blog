@@ -1,0 +1,12 @@
+    {% extends 'common/base.html' %}
+
+{% block headcss %}
+    <link href="{{ STATIC_URL }}plugins/css/biger/blog_mine.css" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    {% csrf_token %}
+    <div id="BlogMine" name="BlogMine" xmlns="http://www.w3.org/1999/html">
+        <div data-ng-include="'/static/blog/templates/blog_mine.html'" data-ng-controller="BlogMineController">
+        </div>
+    </div>
+{% endblock %}

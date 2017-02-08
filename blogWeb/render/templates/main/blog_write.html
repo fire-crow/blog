@@ -1,0 +1,17 @@
+{% extends 'common/base.html' %}
+
+{% block headcss %}
+    <link href="{{ STATIC_URL }}plugins/umeditor/lib/umeditor/dist/utf8-php/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}plugins/css/biger/blog_write.css" type="text/css" rel="stylesheet">
+
+{% endblock %}
+{% block content %}
+    <div data-ng-controller="BlogWriteController">
+        <div id="Writeblog" name="Writeblog" class="op-section" xmlns="http://www.w3.org/1999/html">
+            <div data-ng-include="'/static/blog/templates/blog_write.html'">
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

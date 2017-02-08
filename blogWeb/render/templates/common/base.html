@@ -1,0 +1,44 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en" data-ng-app="BlogApp">
+    <head>
+        <!-- webkit kernel-->
+        <meta name="renderer" content="webkit">
+
+        <title>{% block title %}biggerW的博客
+        {% endblock %}
+        </title>
+        <h3>{% block headTitle %}{% endblock %}</h3>
+
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--   bootstrap支持响应式布局标签  -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- viewport是网页默认的宽度和高度 width=device-width网页默认的宽度与屏幕的宽度
+        innitial-scale=1原始放缩比例为1.0,即网页初始大小占屏幕面积的100%-->
+
+        <meta content="blogWeb" name="description"/>
+        <meta content="biggerW" name="author"/>		
+        <!--   小图标配置一般方法 -->
+        <link rel="icon" href="{{ STATIC_URL }}plugins/img/favicon.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="{{ STATIC_URL }}plugins/img/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="{{ STATIC_URL }}plugins/img/favicon.ico" type="image/gif" />
+
+		<!-- 本地配置 django url.py 中配好了-->
+		<link rel="icon" href="favicon.ico" type="image/gif" />
+        {% include "common/common_css.html" %}
+        {% block headcss %}
+        {% endblock %}
+
+    </head>
+
+    <body data-ng-controller="AppController" ng-view>
+        {% csrf_token %}
+        {% include "common/common_js.html" %}
+        {% block content %}
+        {% endblock %}
+
+    </body>
+
+
+</html>

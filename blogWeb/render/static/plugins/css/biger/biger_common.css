@@ -1,0 +1,185 @@
+
+.img-my-background {
+    background-image : url('../../img/background/xiaolu.jpg');
+    background-repeat : no-repeat;
+    background-size: contain;
+    height: 800px;
+}
+
+.navbar-nav>li {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+.navbar-brand {
+    height: 40px;
+    padding-top: 20px;
+    padding-left: 100px;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.navbar {
+    top:40px;
+    min-height: 50px;
+    opacity: 1;
+    background-color: transparent;
+}
+
+.inhead-navbar {
+    opacity: 0.8;
+}
+
+
+.navbar-toggle {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.div-height-full {
+    height:0px;
+    padding-bottom:80%
+}
+
+
+
+
+
+.div-height-half {
+    height:0px;
+    padding-bottom:50%
+}
+
+.div-height-smhalf {
+    height:0px;
+    padding-bottom:30%
+}
+
+.div-height-small {
+    height:0px;
+    padding-bottom:10%
+}
+
+.welcome-size{
+    font-size:x-large;
+}
+/*
+ * 定义body 超出页面部分隐藏
+ */
+
+.x-hidden {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+/*
+ *  定义注册和登录以后的动画效果
+ *
+ */
+
+@keyframes fade_in_out {
+    0%   {opacity: 0}
+    25%  {opacity: .5}
+    50%  {opacity: 1}
+    75%  {opacity: .5}
+    100% {opacity: 0}
+}
+.show-slow {
+    text-align: center;
+    animation-name: fade_in_out;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+
+.navbar-inverse .navbar-nav>li>a:focus {
+    background-color: rgba(0,0,0,0.0);
+    color: #9d9d9d;
+}
+/*
+ * 定义主页第二部分 博客 动画效果
+ */
+@keyframes right_to_left {
+    0%   {left: 100% ; transform: rotate(10deg);}
+    100% {left: 0% ; transform: rotate(0deg);}
+}
+
+.rtl-cl {
+    animation-name: right_to_left;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+/*
+定义第一层图片消失的动画
+@keyframes right_to_left_dis {
+    0%   {right: 0% ; transform: rotate(0deg);}
+    100% {right: 150% ; transform: rotate(-10deg);}
+}
+
+.rtl-cl-dis {
+    animation-name: right_to_left_dis;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+*/
+@keyframes left_to_right {
+    0%   {right: 100% ; transform: rotate(10deg);}
+    100% {right: 0% ; transform: rotate(0deg);}
+}
+
+.ltr-cl {
+    animation-name: left_to_right;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+/*
+
+定义第二层图片消失的动画
+@keyframes left_to_right_dis {
+    0%   {left:  0% ; transform: rotate(0deg);}
+    100% {left:  150% ; transform: rotate(-10deg);}
+}
+
+
+.ltr-cl-dis {
+    animation-name: left_to_right_dis;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+*/
+
+@keyframes trans_circle {
+    0%   {transform: rotateY(130deg); -moz-transform: rotateY(130deg); -webkit-transform: rotateY(130deg);}
+    100% {transform: rotateY(0deg); -moz-transform: rotateY(0deg); -webkit-transform: rotateY(0deg);}
+}
+
+.turn-ro-right {
+    animation-name: trans_circle;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.pg4-before {
+    opacity: 0
+}
+
+@keyframes trans_fade_out {
+    0%   {opacity: 0}
+    100% {opacity: 1}
+}
+
+.fade-out-pg4 {
+    animation-name: trans_fade_out;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+
+

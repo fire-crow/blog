@@ -1,0 +1,78 @@
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;font-size:14px;}
+
+body {
+	background-color:#F7F6F2;
+}
+
+h1, h2, h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.bg{
+    background:url(../../img/biger/nav.png) repeat-x;
+    background-size:contain;
+    height: 100px;
+}
+.container-fluid{
+    padding-top :5%;
+}
+
+.biger-pin {
+    position: fixed;
+    top: 60px;
+    margin-top: 108px;
+    text-align: center;
+}
+
+.blogtitle {
+    width: 100%;
+    padding: 10px 20px 10px 30px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 0;
+    box-shadow: none;
+}
+.edui-btn-toolbar {
+    margin: 0;
+    list-style-type: none;
+    background-color: #dedede;
+    border-bottom: 1px solid #d9d9d9;
+}
+.edui-btn-toolbar .edui-btn {
+    vertical-align: middle;
+}
+
+.edui-editor-body {
+    width: 100%;
+    padding: 30px 30px 0;
+    margin-bottom: 0;
+    resize: none;
+    color: #2f2f2f;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 30px;
+}
+
+.biger-bord {
+    border-style:solid;
+    border-width:3px;
+    border-color:#7F8C8D;
+    background:#eff7ff;
+    padding:8px;
+    border-radius: 20px 20px;
+    -moz-border-radius: 20px 20px;
+    -webkit-border-radius: 20px 20px;
+}
+
+.biger-li {
+    border-style:none none solid;
+    border-width:1px;
+    border-color:#95A5A6;
+}

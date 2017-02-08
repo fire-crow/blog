@@ -1,1 +1,3 @@
-just test
+有用户注册系统的博客网站，主要由django和angular组成，可以当作demo，适合新手练手。。。
+
+A user registration system of the blog site, mainly by Django and angular which can be used as demo, suitable for beginners to practice hand...

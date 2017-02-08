@@ -1,0 +1,17 @@
+{% extends 'common/base.html' %}
+
+{% block headcss %}
+    <link href="{{ STATIC_URL }}plugins/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <link href="{{ STATIC_URL }}plugins/css/biger/user_setting.css" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <script type="text/javascript" src="{{ STATIC_URL }}plugins/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}plugins/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+
+    {% csrf_token %}
+    <div id="setting" name="setting" xmlns="http://www.w3.org/1999/html">
+        <div data-ng-include="'/static/blog/templates/user_setting.html'"
+             data-ng-controller="UserSettingController">
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'common/base.html' %}
+{% block headcss %}
+    <!--just a test , but dont del now-->
+    <link href="{{ STATIC_URL }}plugins/css/biger/biger_common.css"  type="text/css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}plugins/css/biger/user_enter.css" type="text/css" rel="stylesheet">
+
+{% endblock %}
+{% block content %}
+    <div data-ng-controller="UserEnterController">
+        <div id="Overview" name="Overview" class="op-section" xmlns="http://www.w3.org/1999/html">
+            <div data-ng-include="'/static/blog/templates/user_enter.html'">
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

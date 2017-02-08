@@ -1,0 +1,53 @@
+<div data-ng-include="'/static/blog/layout/head.html'" data-ng-controller="HeaderController">
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-2 col-md-offset-1 biger-pin">
+                <ul class="nav biger-bord">
+                    <li class="biger-li"><a href="#link-one">全部博客</a></li>
+                    <li class="biger-li"><a href="#link-two">最新动态</a></li>
+                    <li class="biger-li"><a href="/blogsite/mine/blogs">我的博客</a></li>
+                    <li><a href="write/">写博客</a></li>
+                </ul>
+            </div>
+            <!--  id="allblogs"        -->
+
+            <div class="col-md-8 col-md-offset-3">
+                <div class="col-md-offset-1 col-md-11 biger-box">
+                    <div class="row biger-top"  data-ng-repeat="blog in blogs">
+                        <div class="biger-blog-title">
+                            <a href="#">{[{blog.name }]}</a>
+                        </div>
+                        <div class="biger-author-info clearfix">
+                            <p class="biger-author fl">
+                                <a href="#">
+                                    <img src="{[{blog.headshot}]}" width="40" height="40" alt="blog.sweet_name">
+                                    <span>{[{blog.sweet_name }]}</span>
+                                </a>
+                            </p>
+                            <span class="biger-time fl">
+                                发布时间：
+                                    <em>
+                                        {[{blog.create_at }]}
+                                    </em>
+                            </span>
+                            <span class="biger-classify fl">
+                                分类：<a href="#">{[{blog.type}]}</a>
+                            </span>
+                        </div>
+                        <div>
+                            {[{blog.description}]}
+                        </div>
+                    </div>
+                </div>
+
+<!--
+                <strong class="row"></strong>
+                <small class="content"></small>
+                -->
+            </div>
+        </div>
+    </div>
+</div>

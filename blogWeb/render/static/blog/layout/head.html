@@ -1,0 +1,409 @@
+<div id="header" name="header" class="navbar navbar-static-top" data-ng-if="is_overview">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                        <a class="navbar-brand" href="/">木木</a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right" data-ng-if="!is_forget && !is_validate && !is_inBlog">
+                <li>
+                     <a href="/blogsite/login/" data-ng-click="reloadPage()" class="btn btn-xs btn-info">{[{ 'btn.Login' | Trans }]}</a>
+                </li>
+                <li>
+                     <a href="/blogsite/register/" data-ng-click="reloadPage()" class="btn btn-xs btn-info">{[{ 'btn.register' | Trans }]}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right"  data-ng-if="is_forget">
+                <li>
+                     <a href="/blogsite/forget/" data-ng-click="reloadPage()" class="btn btn-xs btn-info">{[{ 'forget_password' | Trans }]}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right"  data-ng-if="is_validate">
+                <li>
+                     <a href="/blogsite/email_validate/"
+                        data-ng-click="reloadPage()" class="btn btn-xs btn-info">{[{ 'validate_email' | Trans }]}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!--  占地方   -->
+                <li><a href="#" ng-click="">{[{ 'Overview' | Trans }]}</a></li>
+                <li><a href="#" ng-click="">{[{ 'thanks' | Trans }]}</a></li>
+                <li><a href="#" ng-click="">{[{ 'help' | Trans }]}</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="row nav-row" data-ng-if="is_inBlog">
+    <div class="col-xs-12 col-md-12">
+        <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="#">biggerW</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                <ul class="nav navbar-nav navbar-left">
+                    <!--  占地方   -->
+                    <li><a href="/blogsite/blogs" >{[{ 'Blogs' | Trans }]}<span
+                            class="navbar-unread">1</span></a></li>
+                    <li><a href="/blogsite/about">{[{ 'Aboutme' | Trans }]}</a></li>
+                    <li><a href="/blogsite/connect">{[{ 'Connect' | Trans }]}</a></li>
+                </ul>
+                <form class="navbar-form navbar-left" action="#" role="search">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+                            <span class="input-group-btn">
+                      <button type="submit" class="btn"><span class="fui-search"></span></button>
+                    </span>
+                        </div>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav col-md-2 navbar-right">
+                    <li id="dropdown" show-menu class="dropdown" data-ng-show="can_displayname">
+                        <a  href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            {[{ 'hello' | Trans }]}, {[{name}]} <b class="caret"></b></a>
+                        <span class="dropdown-arrow"></span>
+                        <ul class="dropdown-menu">
+                            <li><a href="/blogsite/mine/setting">
+                                <label class="fui-gear biger-front-cl"></label>
+                                &nbsp;{[{ 'personal_setting' | Trans }]}</a></li>
+                            <li><a href="/blogsite/mine/blogs">
+                                <label class="fui-home biger-front-cl"></label>
+                                &nbsp;{[{ 'index_page' | Trans }]}</a></li>
+                            <li><a href="/blogsite/mine/collect">
+                                <label class="fui-star-2 biger-front-cl"></label>
+                                &nbsp;{[{ 'my_collection' | Trans }]}</a></li>
+                            <li class="divider"></li>
+                            <li><a  ng-click="logout()">
+                                <label class="fui-exit biger-front-cl"></label>
+                                &nbsp;{[{ 'btn.Logout' | Trans }]}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav><!-- /navbar -->
+    </div>
+</div> <!-- /row -->
+
+
+<script type="text/ng-template" id="login.html">
+<div id="Connect" name="Connect" class="">
+    <div class="">
+        <div class="">
+            <h3 class="text-center">
+                欢迎回来！
+            </h3>
+            <form id="register" name="register" class="login-form">
+                <div class="row">
+                    <div class="col-md-12  form-group">
+                        <label class="col-md-3 text-right" for="">
+                            {[{'username' | Trans}]}
+                            <span class="required" aria-required="true"> * </span>
+                        </label>
+                        <div class="col-md-9 text-left">
+                            <input id="username" name="username" type="text" class="form-control login-field"
+                                   data-ng-model="user.sweet_name" placeholder=""/>
+                            <label class="login-field-icon fui-user" for="username"></label>
+                        </div>
+                    </div>
+                </div>
+                <!-- forbiden brower block data -->
+                <input type="text" style="display: none">
+                <input type="password" style="display: none">
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 text-right">
+                            {[{'password' | Trans}]}
+                            <span class="required" aria-required="true"> * </span>
+                        </label>
+                        <div class="col-md-9 text-left">
+                            <input id="password" name="password" type="password" class="form-control login-field"
+                                   data-ng-model="user.password"/>
+                            <label class="login-field-icon fui-lock" for="password"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-offset-8 text-center">
+                    <a class="forget-pass" href="/blogsite/forget">忘记密码？点我！</a>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-1 text-center">
+                            <a id="loginBtn" type="submit" class="btn btn-block btn-lg btn-inverse disabled" data-ng-click="userLogin(user)">
+                            {[{ 'btn.Login' | Trans}]}
+                            </a>
+                            <a class="login-link" href="/blogsite/register" data-ng-click="forgetPwd()">还没有账户，马上注册</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="register.html">
+<div id="userRegister" name="userRegister" class="">
+    <div class="">
+        <div class="">
+            <h3 class="text-center">
+                快来加入我们吧！
+            </h3>
+            <form id="register" name="register" class="login-form">
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 text-right">
+                            {[{'username' | Trans}]}
+                            <span class="required" aria-required="true"> * </span>
+                        </label>
+                        <div class="col-md-9 text-left">
+                            <input id="sweet_name" name="sweet_name" type="text" class="form-control login-field"
+                                   data-ng-model="user.sweet_name" placeholder="目前没做校验"/>
+                            <label class="login-field-icon fui-user" for="sweet_name"></label>
+                        </div>
+                    </div>
+                </div>
+                <!-- forbiden brower block data -->
+                <input type="text" style="display: none">
+                <input type="password" style="display: none">
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 text-right">
+                            {[{'password' | Trans}]}
+                            <span class="required" aria-required="true"> * </span>
+                        </label>
+                        <div class="col-md-9 text-left">
+                            <input id="password" name="password" type="{[{ canSee ? 'text' : 'password' }]}" class="form-control login-field"
+                                   data-ng-model="user.password" placeholder="只输一遍，请记好"/>
+                            <label class="login-field-icon fui-eye" for="password"
+                                   data-ng-mouseenter="userCanSee()" data-ng-mouseleave="userCanNotSee()"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 text-right" >
+                            {[{'password_tips' | Trans}]}
+                            <span class="required" aria-required="false"> &nbsp; </span>
+                        </label>
+                        <div class="col-md-9 text-left">
+                            <input id="tips" name="tips" type="text" class="form-control login-field"
+                                   data-ng-model="user.tips" placeholder="选填"/>
+                            <label class="login-field-icon fui-info-circle" for="tips"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-1 text-center">
+                            <a id="registerBtn" type="submit" class="btn btn-block btn-lg btn-inverse disabled"
+                               data-ng-click="newUserRegister(user)">
+                                {[{'btn.register' | Trans}]}
+                            </a>
+                            <a class="login-link" href="/blogsite/login">已有账户？马上登录</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="forgetPwd.html">
+    <div id="forgetpd" name="forgetpd" class="">
+        <div class="" data-ng-show="step1Flag">
+            <h3 class="text-center">
+                找回密码
+            </h3>
+            <form id="resetpwd1" name="resetpwd1" class="login-form">
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 text-right">
+                            {[{'username' | Trans}]}
+                            <span class="required" aria-required="true"> * </span>
+                        </label>
+                        <div class="col-md-9 text-left">
+                            <input id="sweet_name" name="sweet_name" type="text" class="form-control login-field"
+                                   data-ng-model="user.sweet_name" placeholder="目前没做校验"/>
+                            <label class="login-field-icon fui-user" for="sweet_name"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 text-right">
+                            {[{'email' | Trans}]}
+                            <span class="required" aria-required="true"> * </span>
+                        </label>
+                        <div class="col-md-9 text-left">
+                            <input id="userEml" name="userEml" type="text"
+                                   class="form-control login-field disabled"
+                                   data-ng-model="user.email" placeholder="找回密码唯一途径"/>
+                            <label class="login-field-icon fui-mail" for="userEml"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-1 text-center">
+                            <a id="forgetpwd1" type="next" class="btn btn-block btn-lg btn-inverse disabled"
+                            ng-click="checkNameEmail(user)">{[{'btn.next' | Trans}]}
+                            </a>
+                            <a class="login-link" href="/blogsite/login">返回</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="" data-ng-show="step2Flag">
+            <h3 class="text-center">
+                找回密码
+            </h3>
+            <form id="resetpwd2" name="resetpwd2" class="login-form">
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-9 text-left bhd-r">
+                            <input id="checkNum" name="checkNum" type="text"
+                                   class="form-control login-field"
+                                   data-ng-model="user.checkNum" placeholder="验证码"/>
+                        </div>
+                        <div class="col-md-3 text-right bhd-l">
+                            <a type="button" class="btn btn-inverse"
+                                ng-click="send_checkNum(user)">{[{'btn.send_checkNum' | Trans}]}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-1 text-center">
+                            <a id="checkNum1" type="next" class="btn btn-block btn-lg btn-inverse disabled"
+                            ng-click="check_num_is_right(user)">{[{'btn.next' | Trans}]}
+                            </a>
+                            <a class="login-link" href="/blogsite/login">返回</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="" data-ng-show="step3Flag">
+            <h3 class="text-center">
+                找回密码
+            </h3>
+            <form id="resetpwd2" name="resetpwd2" class="login-form">
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 text-right">
+                            {[{'newpassword' | Trans}]}
+                            <span class="required" aria-required="true"> * </span>
+                        </label>
+                        <div class="col-md-9 text-left">
+                            <input id="password" name="password" type="{[{ canSee ? 'text' : 'password' }]}"
+                                   class="form-control login-field"
+                                   data-ng-model="user.password" placeholder="只输一遍，请记好"/>
+                            <label class="login-field-icon fui-eye" for="password"
+                                   data-ng-mouseenter="userCanSee()" data-ng-mouseleave="userCanNotSee()"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-1 text-center">
+                            <a id="forgetpwd3" type="next" class="btn btn-block btn-lg btn-inverse disabled"
+                            ng-click="submit(user)">{[{'submit' | Trans}]}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</script>
+
+
+<script type="text/ng-template" id="email_validate.html">
+    <div id="testEmail" name="testEmail" class="">
+        <div class="" data-ng-if="!emailSendSuccess && !emailSendfailed">
+            <h3 class="text-center">
+                注册成功！验证邮箱以激活用户
+            </h3>
+            <form id="validateEmail" name="validateEmail" class="login-form">
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 text-right">
+                            {[{'email' | Trans}]}
+                            <span class="required" aria-required="true"> * </span>
+                        </label>
+                        <div class="col-md-9 text-left" data-ng-if="!hasClicked">
+                            <input id="userEml" name="userEml" type="text"
+                                   class="form-control login-field"
+                                   data-ng-model="user.email" placeholder="找回密码唯一途径"/>
+                            <label class="login-field-icon fui-mail" for="userEml"></label>
+                        </div>
+                        <div class="col-md-9 text-left" data-ng-if="hasClicked">
+                            <input id="userEml" name="userEml" type="text"
+                                   class="form-control login-field disabled"
+                                   data-ng-model="user.email" placeholder="找回密码唯一途径"/>
+                            <label class="login-field-icon fui-mail" for="userEml"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-1 text-center" data-ng-if="!hasClicked">
+                            <a type="submit" class="btn btn-block btn-lg btn-inverse"
+                               data-ng-click="validateEmails(user)">{[{'btn.validation_email' | Trans}]}
+                            </a>
+                            <a class="login-link" href="/blogsite/login">返回</a>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1 text-center" data-ng-if="hasClicked">
+                            <a type="submit" class="btn btn-block btn-lg btn-inverse disabled">
+                                {[{'btn.waitingForEmail' | Trans}]}
+                            </a>
+                            <a class="login-link" href="/blogsite/login">返回</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="" data-ng-if="emailSendSuccess">
+            <h3 class="text-center">
+                邮件发送成功！请登录邮箱，激活用户
+            </h3>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <a type="submit" class="btn btn-block btn-lg btn-inverse"
+                       href="/blogsite/blogs">已经登录邮箱并成功激活，点我！
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="" data-ng-if="emailSendfailed">
+            <h3 class="text-center">
+                邮件发送失败！请重新注册。注册过程中请不要清除cookie
+            </h3>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <a type="submit" class="btn btn-block btn-lg btn-inverse"
+                       href="/">我要重新注册
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

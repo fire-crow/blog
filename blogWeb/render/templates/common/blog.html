@@ -1,0 +1,26 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <link href="{{ STATIC_URL }}plugins/css/flat-ui.min.css" type="text/css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}plugins/css/other/overview.css" type="text/css" rel="stylesheet">
+    <script src="{{ STATIC_URL }}plugins/js/flat_ui/flat-ui.min.js"></script>
+    <div id="view">
+        <div id="frame">
+            <div id="Overview" name="Overview" class="op-section" xmlns="http://www.w3.org/1999/html">
+                <div data-ng-include="'/static/blog/layout/overview.html'" data-ng-controller="OverviewController">
+                </div>
+            </div>
+            <div class="op-section second">section1</div>
+            <div class="op-section third">section2</div>
+        </div>
+    </div>
+    <div id="radioWrap">
+        <ul id="radio">
+            <li>section0</li>
+            <li>section1</li>
+            <li>section2</li>
+        </ul>
+        <span id="radioOn"></span>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;font-size:14px;}
+
+body {
+    margin:0;
+    padding:0;
+    overflow-y:hidden;
+    background-image : url('../../img/background/xiaolu.jpg');
+    background-repeat : no-repeat;
+    background-size: cover;
+    height: 800px;
+}
+
+.login-form .login-field-icon {
+  right: 25px;
+}
+
+.forget-pass {
+  color: #7F8C8D;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.bhd-l {
+    padding-left: 0;
+}
+
+.bhd-r {
+    padding-right: 0;
+}
+
+.ngdialog-theme-default {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
